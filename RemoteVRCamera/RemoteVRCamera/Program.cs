@@ -26,7 +26,7 @@ namespace RemoteVRCamera
             Thread rsThr;
             Thread thetaThr;
 
-            //rsThr = new Thread(new ThreadStart(RealSenseOperate)); rsThr.Start();
+            rsThr = new Thread(new ThreadStart(RealSenseOperate)); rsThr.Start();
             thetaThr = new Thread(new ThreadStart(ThetaOperate)); thetaThr.Start();
 
             while (flg)
@@ -34,7 +34,7 @@ namespace RemoteVRCamera
                 Thread.Sleep(1000);
             }
 
-            //rs.Exit();
+            rs.Exit();
             theta.Exit();
         }
         static void RealSenseOperate()
